@@ -1,0 +1,41 @@
+# Check various merge error cases.
+I setup2.inc
+> branch other
+<<<
++ hunky.txt wug2.txt
+> add hunky.txt
+<<<
+> rm gunky.txt
+<<<
+> commit "Add h.txt and remove g.txt"
+<<<
+> checkout other
+<<<
+> rm funky.txt
+<<<
++ kunky.txt wug3.txt
+> add kunky.txt
+<<<
+> commit "Add kunky.txt and remove funky.txt"
+<<<
+> checkout master
+<<<
+> merge foobar
+A branch with that name does not exist.
+<<<
++ kunky.txt wug.txt
+> merge other
+There is an untracked file in the way; delete it or add it first.
+<<<
+- kunky.txt
+I blank-status2.inc
++ kunky.txt wug.txt
+> add kunky.txt
+<<<
+> merge other
+You have uncommitted changes.
+<<<
+> rm kunky.txt
+<<<
+- kunky.txt
+I blank-status2.inc

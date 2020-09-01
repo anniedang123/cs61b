@@ -1,0 +1,40 @@
+
+HW #5.
+
+Question D.
+
+1. simple: omega(x^2)
+tight: o(x^2) -> theta(x^2)
+
+
+2. simple: omega(log(x))
+tight: o(log(x)) -> theta(log(x))
+
+
+3. theta(N^3)
+
+
+4. thata(M)
+
+
+5. theta(nlog(n))
+
+
+6.  We want to find a, c, N such that: a*log(f(x)) <= log_b(f(x)) <= c*log(f(x)) for all x >= N
+   log_b(f(x)) = log(f(x)) / log(b)
+   a*log(f(x)) <= log(f(x)) / log(b)
+   log(f(x)) / log(b) <= c*log(f(x))
+   a = c = 1 / log(b)
+   N = 1
+   therefore log_b(f(x)) is in log(f(x))
+
+
+7.Let p(x) be a finite polynomial = a_0 + a_1*x^1 + ... + a_n*x^n.
+  The highest degree term is a_x*x^n.
+  As x increases, p(x) is approximately a_n*x^n, so log(a_n*x^n) = log(a_n) + n*log(x).
+  log(a_n) is a constant and so n*log(x) is in theta(log(x)).
+  Therefore, as x increases, log(p(x)) is in O(log(x))
+
+
+8. Let M = 0, k = 2. If f(x) is a non-decreasing function because f' is non-negative, then k|f(x)| > |f(x)| for all x > M.
+   Therefore f(x) is in O(f(x)).

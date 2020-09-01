@@ -1,0 +1,42 @@
+# Various error cases for reset
+# Check reset command.
+I setup2.inc
+> branch other
+<<<
++ hunky.txt wug2.txt
+> add hunky.txt
+<<<
+> rm gunky.txt
+<<<
+> commit "Add hunky.txt and remove gunky.txt"
+<<<
+> log
+===
+${COMMIT_HEAD}
+${DATE}
+Add hunky.txt and remove gunky.txt
+
+===
+${COMMIT_HEAD}
+${DATE}
+Two files
+
+===
+${COMMIT_HEAD}
+${DATE}
+initial commit
+<<<*
+D INIT "${3}"
+D TWO "${2}"
+D MASTER1 "${1}"
+
+> checkout other
+<<<
+# Almost certain not to exist.
+> reset 025052f2b193d417df998517a4c539918801b430
+No commit with that id exists.
+<<<
++ hunky.txt wug3.txt
+> reset ${MASTER1}
+There is an untracked file in the way; delete it or add it first.
+<<<

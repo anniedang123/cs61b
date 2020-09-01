@@ -1,0 +1,142 @@
+# Check reset command.
+I setup2.inc
+> branch other
+<<<
++ hunky.txt wug2.txt
+> add hunky.txt
+<<<
+> rm gunky.txt
+<<<
+> commit "Add hunky.txt and remove gunky.txt"
+<<<
+> checkout other
+<<<
+> rm funky.txt
+<<<
++ kunky.txt wug3.txt
+> add kunky.txt
+<<<
+> commit "Add k.txt and remove f.txt"
+<<<
+> log
+===
+${COMMIT_HEAD}
+${DATE}
+Add k.txt and remove f.txt
+
+===
+${COMMIT_HEAD}
+${DATE}
+Two files
+
+===
+${COMMIT_HEAD}
+${DATE}
+initial commit
+
+<<<*
+D INIT "${3}"
+D TWO "${2}"
+D OTHER1 "${1}"
+
+> checkout master
+<<<
+> log
+===
+${COMMIT_HEAD}
+${DATE}
+Add hunky.txt and remove gunky.txt
+
+===
+${COMMIT_HEAD}
+${DATE}
+Two files
+
+===
+${COMMIT_HEAD}
+${DATE}
+initial commit
+<<<*
+D MASTER1 "${1}"
++ munky.txt wug.txt
+> add munky.txt
+<<<
+> reset ${TWO}
+<<<
+> status
+=== Branches ===
+\*master
+other
+
+=== Staged Files ===
+
+=== Removed Files ===
+
+=== Modifications Not Staged For Commit ===
+
+=== Untracked Files ===
+(munky\.txt\n)?\s*
+<<<*
+
+> log
+===
+${COMMIT_HEAD}
+${DATE}
+Two files
+
+===
+${COMMIT_HEAD}
+${DATE}
+initial commit
+<<<*
+> checkout other
+<<<
+> log
+===
+${COMMIT_HEAD}
+${DATE}
+Add k.txt and remove f.txt
+
+===
+${COMMIT_HEAD}
+${DATE}
+Two files
+
+===
+${COMMIT_HEAD}
+${DATE}
+initial commit
+
+<<<*
+> checkout master
+<<<
+> log
+===
+${COMMIT_HEAD}
+${DATE}
+Two files
+
+===
+${COMMIT_HEAD}
+${DATE}
+initial commit
+<<<*
+> reset ${MASTER1}
+<<<
+> log
+===
+${COMMIT_HEAD}
+${DATE}
+Add hunky.txt and remove gunky.txt
+
+===
+${COMMIT_HEAD}
+${DATE}
+Two files
+
+===
+${COMMIT_HEAD}
+${DATE}
+initial commit
+
+<<<*

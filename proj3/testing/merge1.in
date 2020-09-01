@@ -1,0 +1,37 @@
+# Create two branches and merge other into master.
+I setup2.inc
+> branch other
+<<<
++ hunky.txt wug2.txt
+> add hunky.txt
+<<<
+> rm gunky.txt
+<<<
+> commit "Add hunky.txt and remove gunky.txt"
+<<<
+> checkout other
+<<<
+> rm funky.txt
+<<<
++ kunky.txt wug3.txt
+> add kunky.txt
+<<<
+> commit "Add kunky.txt and remove funky.txt"
+<<<
+> checkout master
+<<<
+> merge other
+<<<
+* funky.txt
+* gunky.txt
+= hunky.txt wug2.txt
+= kunky.txt wug3.txt
+> log
+===
+${COMMIT_HEAD}
+${DATE}
+Merged other into master.
+
+${ARBLINES}
+<<<*
+I blank-status2.inc

@@ -1,0 +1,6 @@
+# Check error message for removal of unstaged, untracked file.
+I prelude1.inc
++ funky.txt wug.txt
+> rm funky.txt
+No reason to remove the file.
+<<<

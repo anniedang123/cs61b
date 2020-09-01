@@ -1,0 +1,34 @@
+# Create two branches and switch between them
+I prelude1.inc
+> branch other
+<<<
++ funky.txt wug.txt
++ gunky.txt notwug.txt
+> add gunky.txt
+<<<
+> add funky.txt
+<<<
+> commit "Main two files"
+<<<
+E funky.txt
+E gunky.txt
+> checkout other
+<<<
+* funky.txt
+* gunky.txt
++ funky.txt notwug.txt
+> add funky.txt
+<<<
+> commit "Alternative file"
+<<<
+= funky.txt notwug.txt
+* gunky.txt
+> checkout master
+<<<
+= funky.txt wug.txt
+= gunky.txt notwug.txt
+> checkout other
+<<<
+= funky.txt notwug.txt
+* gunky.txt
+

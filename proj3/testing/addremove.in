@@ -1,0 +1,21 @@
+# Status with two adds
+I setup1.inc
+> rm funky.txt
+<<<
+> status
+=== Branches ===
+\*master
+
+=== Staged Files ===
+gunky.txt
+
+=== Removed Files ===
+
+=== Modifications Not Staged For Commit ===
+
+=== Untracked Files ===
+${ARBLINES}
+
+<<<*
+# File was not tracked, so make sure it's still there
+= funky.txt wug.txt

@@ -1,0 +1,59 @@
+# Create two branches and merge other into master with a merge conflict.
+I setup2.inc
+> branch other
+<<<
++ hunky.txt wug2.txt
+> add hunky.txt
+<<<
+> rm gunky.txt
+<<<
++ funky.txt wug2.txt
+> add funky.txt
+<<<
+> commit "Add h.txt, remove g.txt, and change f.txt"
+<<<
+> checkout other
+<<<
++ funky.txt notwug.txt
+> add funky.txt
+<<<
++ kunky.txt wug3.txt
+> add kunky.txt
+<<<
+> commit "Add k.txt and modify f.txt"
+<<<
+> checkout master
+<<<
+> log
+===
+${COMMIT_HEAD}
+${ARBLINES}
+<<<*
+D MASTER_HEAD "${1}"
+> merge other
+Encountered a merge conflict.
+<<<
+* gunky.txt
+= hunky.txt wug2.txt
+= kunky.txt wug3.txt
+= funky.txt conflict1.txt
+> log
+===
+${COMMIT_HEAD}
+${DATE}
+${ARBLINES}
+<<<*
+> status
+=== Branches ===
+\*master
+other
+
+=== Staged Files ===
+
+=== Removed Files ===
+
+=== Modifications Not Staged For Commit ===
+
+=== Untracked Files ===
+
+<<<*

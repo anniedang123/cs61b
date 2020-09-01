@@ -1,0 +1,15 @@
+# Check that two branches can't be given same name.
+I prelude1.inc
+> branch other
+<<<
++ funky.txt wug.txt
++ gunky.txt notwug.txt
+> add gunky.txt
+<<<
+> add funky.txt
+<<<
+> commit "Main two files"
+<<<
+> branch other
+A branch with that name already exists.
+<<<
